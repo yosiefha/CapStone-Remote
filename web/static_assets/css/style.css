@@ -1,0 +1,302 @@
+:root {
+    /* css variables: https://developer.mozilla.org/en-US/docs/Web/CSS/var */
+    --primary-color: #5D5E5E;
+    --secondary-color: #ffffff;
+    --tertiary-color:  #3498db;
+    --error-color: #EE3A23;
+}
+/**/
+.background {
+    background-color: #8A8C8F;
+    margin: 0;
+    counter-reset: section;
+    font-family: "Helvetica Neue",Helvetica,sans-serif;
+}
+
+.header {
+    /* Flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 4px 20px;
+}
+
+.button {
+  background-color: var(--tertiary-color);
+  border: none;
+  color: var(--secondary-color);
+  padding: 6px 8px 4px 8px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_home {
+    font-size: 36px;
+    line-height: 40px;
+    height: 100px;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.card {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    margin: 20px;
+    padding: 10px 20px;
+}
+.card-add-medication{
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    margin: 20px;
+    padding-bottom: 70px;
+}
+
+.error {
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+    padding: 8px;
+}
+
+.validated-field:invalid {
+    outline: 2px solid var(--error-color);
+}
+.validated-field:focus:invalid {
+    color: var(--error-color);
+}
+
+.card-content {
+    max-width: 500px;
+}
+
+.card-content .form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+}
+
+.tag {
+    font-size: 12px;
+    margin: 0 10px;
+    padding: 4px 8px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    position: relative;
+    border-radius: 16px;
+}
+
+.song {
+    padding: 2px;
+    display: flex;
+}
+
+.song .title {
+    flex: 20%;
+}
+
+.song .album {
+    flex: 80%;
+}
+
+/*
+Flexbox on a lists removes the numbers. We use a counter here to add them back.
+https://stackoverflow.com/a/34316093
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
+*/
+.song:before {
+    counter-increment: section;
+    content: counter(section) ".";
+    position: absolute;
+    margin-left: -40px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* table styles */ 
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+a {
+    color: var(--tertiary-color);
+    text-decoration: none;
+}
+
+  table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+
+        /*----------------------------------Nav bar-----------------------------------*/
+
+/*nav {*/
+/*    background-color: #333;*/
+/*    overflow: hidden;*/
+/*}*/
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1px 1px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.nav-button {
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #F7D68A; /* Change the color on hover to give feedback */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container-fluid {
+    margin: 0 auto;
+    /*max-width: 1200px; !* Adjust the max-width as needed *!*/
+}
+
+.vertical-cell {
+    white-space: normal;
+}
+
+.row-container {
+    display: flex;
+}
+
+.row-container > td {
+    flex: 1;
+    word-break: break-word; /* Allow words to break and wrap onto the next line */
+    white-space: nowrap; /* Prevent text from wrapping to the next line in the cells */
+}
+
+.row-container > td:last-child {
+    position: sticky;
+    right: 0;
+    background-color: #f9f9f9; /* Add a background color for better visibility */
+}
+/*.sticky-column {*/
+/*    word-break: break-word; !* Allow words to break and wrap onto the next line *!*/
+/*}*/
+
+/*.action-column {*/
+/*    position: sticky;*/
+/*    right: 0;*/
+/*    background-color: #f9f9f9;*/
+/*    z-index: 1;*/
+/*}*/
+.sticky-column {
+    white-space: nowrap; /* Prevent wrapping */
+    word-break: break-word; /* Allow words to break and wrap onto the next line */
+    overflow: hidden;    /* Hide content that overflows */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflowed content */
+}
+
+.action-column {
+    white-space: nowrap; /* Prevent wrapping */
+    text-align: right;  /* Align buttons to the right */
+}
+
+.action-column button {
+    margin-left: 8px; /* Adjust the value as needed */
+}

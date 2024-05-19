@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type="text/javascript" src="assets/viewPatientDetail.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+
+</head>
+
+<body class="background">
+
+<header class="header" id="header"></header>
+<div class="card">
+<!--  <h3>Patient Details: <span id="patient-name"></span></h3>-->
+  <h3>Patient Name: <span id="patient-full-name"></span></h3>
+</div>
+<div class="card">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+          <h3>Add Diagnosis</h3>
+          <form class="card-content" id="add-diagnosis-form">
+            <p class="hidden error" id="error-message"> </p>
+            <p class="form-field">
+              <label>Description</label>
+              <input type="text" required class="form-control" id="description">
+            </p>
+          </form>
+          <p class="button-group">
+            <a href="#" class="button" id="add-diagnosis">Add diagnosis</a>
+          </p>
+        </div>
+        <div id="diagnosis-details"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card-add-medication">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+          <h3>Add Medication</h3>
+          <form class="card-content" id="add-medication-form">
+            <p class="hidden error" id="error-message1"> </p>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label>Medication Name</label>
+                <input type="text" required class="form-control" id="medicationName">
+              </div>
+              <div class="form-group col-md-2">
+                <label>Dosage</label>
+                <input type="text" class="form-control" id="dosage">
+              </div>
+              <div class="form-group col-md-3">
+                <label>Start Date</label>
+                <input type="text" class="form-control" id="startDate">
+              </div>
+              <div class="form-group col-md-3">
+                <label>End Date</label>
+                <input type="text" class="form-control" id="endDate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Instruction</label>
+              <input type="text" class="form-control" id="instruction">
+            </div>
+          </form>
+          <p class="button-group">
+            <a href="#" class="button" id="add-medication">Add Medication</a>
+          </p>
+        </div>
+        <div id="medication-details"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>&copy; 2023 The Orota Referral Hospital. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</html>
+
+
+

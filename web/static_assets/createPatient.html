@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type="text/javascript" src="assets/createPatientProfile.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+
+    .card {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /*h2 {*/
+    /*  text-align: center;*/
+    /*  color: #333;*/
+    /*}*/
+
+    /*.form-field {*/
+    /*  margin-bottom: 15px;*/
+    /*}*/
+
+    /*label {*/
+    /*  display: block;*/
+    /*  margin-bottom: 5px;*/
+    /*  color: #555;*/
+    /*}*/
+
+    /*input {*/
+    /*  width: 100%;*/
+    /*  padding: 10px;*/
+    /*  box-sizing: border-box;*/
+    /*  border: 1px solid #ccc;*/
+    /*  border-radius: 4px;*/
+    /*  font-size: 16px;*/
+    /*}*/
+
+    /*.button {*/
+    /*  display: inline-block;*/
+    /*  padding: 10px 20px;*/
+    /*  text-decoration: none;*/
+    /*  background-color: #3498db;*/
+    /*  color: #fff;*/
+    /*  border-radius: 4px;*/
+    /*  transition: background-color 0.3s;*/
+    /*}*/
+
+    /*.button:hover {*/
+    /*  background-color: #2980b9;*/
+    /*}*/
+  </style>
+</head>
+
+<body class="background">
+<header class="header" id="header"></header>
+<div class="card">
+  <h2>Create Patient Profile</h2>
+  <form class="card-content" id="create-playlist-form">
+    <p class="hidden error" id="error-message"> </p>
+    <p class="form-field">
+      <label>First Name</label>
+      <input type="text"  id="firstName" placeholder="First Name" data-tip="Must be a comma separated list of tags">
+    </p>
+    <p class="form-field">
+      <label>Last Name</label>
+      <input type="text" id="lastName" class="tags" placeholder="Last Name" data-tip="Must be a comma separated list of tags">
+    </p>
+    <p class="form-field">
+      <label>Contact Number</label>
+      <input type="text"  id="contactNumber" placeholder="Contact Number" data-tip="Must be a comma separated list of tags">
+    </p>
+    <p class="form-field">
+      <label>Date of Birth</label>
+      <input type="text" id="dob" class="tags" placeholder="Date of Birth" data-tip="Must be a comma separated list of tags">
+    </p>
+    <p class="form-field">
+      <label>Email Address</label>
+      <input type="text"  id="emailAddress" placeholder="Email Address" data-tip="Must be a comma separated list of tags">
+    </p>
+    <p class="form-field">
+      <label>Address</label>
+      <input type="text" id="address" class="tags" placeholder="Address" data-tip="Must be a comma separated list of tags">
+    </p>
+    <p>
+      <a href="#" class="button" id="create">Create Patient Profile</a>
+<!--      <a href="index.html" class="button">back to main</a>-->
+
+    </p>
+  </form>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>&copy; 2023 The Orota Referral Hospital. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>
+
+>

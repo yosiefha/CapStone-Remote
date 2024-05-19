@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="assets/searchPatient.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body class="background">
+    <header class="header" id="header"></header>
+    <div class="card">
+        <h3>Search Patient</h3>
+        <form class="card-content" id="search-patient-form">
+            <p class="hidden error" id="error-message"> </p>
+            <p class="form-field">
+                <label>First Name</label>
+                <input type="text" class="validated-field" id="firstName" placeholder="First Name" autofocus>
+<!--                <sub>Search is case-sensitive and tags must match exactly.</sub>-->
+            </p>
+
+            <p class="form-field">
+                <label>Last Name</label>
+                <input type="text" class="validated-field" id="lastName" placeholder="Last Name" autofocus>
+
+            </p>
+        </form>
+        <p class="button-group">
+            <button href="#" type="button" class="button" id="search-btn" disabled>search patient</button>
+            <button href="createPatient.html" type="button" class="button" id="new-patient-btn" disabled>New Patient</button>
+        </p>
+    </div>
+    <div class="card hidden" id='search-results-container'>
+        <h3>Results for <span id="search-criteria-display"></span></h3>
+        <div id="search-results-display">
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2023 The Orota Referral Hospital. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
