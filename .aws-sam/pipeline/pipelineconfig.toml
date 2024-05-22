@@ -1,0 +1,11 @@
+version = 0.1
+[default.pipeline_bootstrap.parameters]
+pipeline_user = "arn:aws:iam::751018890790:user/aws-sam-cli-managed-CapsStone-Remote-p-PipelineUser-lLCRrdnNv2Bh"
+permissions_provider = "AWS IAM"
+
+[CapsStone-Remote.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::751018890790:role/aws-sam-cli-managed-CapsStone-PipelineExecutionRole-FfE4SpYdxSUf"
+cloudformation_execution_role = "arn:aws:iam::751018890790:role/aws-sam-cli-managed-CapsS-CloudFormationExecutionRo-VZtMOAuh3hzn"
+artifacts_bucket = "aws-sam-cli-managed-capsstone-remo-artifactsbucket-7ijcrikrmpxe"
+image_repository = ""
+region = "us-east-2"
