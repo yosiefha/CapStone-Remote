@@ -253,6 +253,7 @@ Resources:
       Environment:
         Variables:
           JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+          COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
       Events:
         PatientRecordService:
           Type: Api
@@ -260,255 +261,236 @@ Resources:
             Path: /patients
             Method: post
 
-
   SearchPatientByNameLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.SearchPatientByNameLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /patients/search/{firstName}/{lastName}
-            Method: get
-
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.SearchPatientByNameLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /patients/search/{firstName}/{lastName}
+              Method: get
 
   CreatePatientDiagnosisLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.CreatePatientDiagnosisLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /diagnoses
-            Method: POST
-
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.CreatePatientDiagnosisLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /diagnoses
+              Method: POST
 
   CreatePatientMedicationLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.CreatePatientMedicationLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /medications
-            Method: POST
-
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.CreatePatientMedicationLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /medications
+              Method: POST
 
   GetPatientByPatientIdLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.GetPatientByPatientIdLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /patients/{patientId}
-            Method: GET
-
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.GetPatientByPatientIdLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /patients/{patientId}
+              Method: GET
 
   GetDiagnosisDetailsLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.GetDiagnosisDetailsLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /patients/{patientId}/diagnoses
-            Method: GET
-
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.GetDiagnosisDetailsLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /patients/{patientId}/diagnoses
+              Method: GET
 
   GetMedicationDetailsLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.GetMedicationDetailsLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /patients/{patientId}/medications
-            Method: GET
-
-
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.GetMedicationDetailsLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /patients/{patientId}/medications
+              Method: GET
 
   DeletePatientLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.DeletePatientLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /patients/{patientId}
-            Method: delete
-
-
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.DeletePatientLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /patients/{patientId}
+              Method: delete
 
   DeleteDiagnosisLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.DeleteDiagnosisLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /diagnoses/{diagnosisId}
-            Method: delete
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.DeleteDiagnosisLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /diagnoses/{diagnosisId}
+              Method: delete
 
   DeleteMedicationLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.DeleteMedicationLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /medications/{medicationId}
-            Method: delete
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.DeleteMedicationLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /medications/{medicationId}
+              Method: delete
 
   UpdatePatientLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.UpdatePatientLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /patients/{patientId}
-            Method: PUT
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.UpdatePatientLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /patients/{patientId}
+              Method: PUT
 
   UpdateMedicationLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.UpdateMedicationLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /medications
-            Method: PUT
-
-  UpdateDiagnosisLambda:
-    Type: AWS::Serverless::Function
-    Properties:
-      Role: !GetAtt AccessRole.Arn
-      CodeUri: PatientRecordServiceLambda
-      Handler: com.nashss.se.hms.lambda.UpdateDiagnosisLambda::handleRequest
-      Runtime: java11
-      Architectures:
-        - x86_64
-      MemorySize: 512
-      Environment:
-        Variables:
-          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
-      Events:
-        PatientRecordService:
-          Type: Api
-          Properties:
-            Path: /diagnoses
-            Method: PUT
+      Type: AWS::Serverless::Function
+      Properties:
+        Role: !GetAtt AccessRole.Arn
+        CodeUri: PatientRecordServiceLambda
+        Handler: com.nashss.se.hms.lambda.UpdateMedicationLambda::handleRequest
+        Runtime: java11
+        Architectures:
+          - x86_64
+        MemorySize: 512
+        Environment:
+          Variables:
+            JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+            COGNITO_USER_POOL_CLIENT_ID: !Ref CognitoUserPoolClientId
+        Events:
+          PatientRecordService:
+            Type: Api
+            Properties:
+              Path: /medications
+              Method: PUT
 
 
   #-----------------------------------------------------
