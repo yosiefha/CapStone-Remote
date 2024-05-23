@@ -165,11 +165,12 @@ jobs:
             --template packaged-prod.yaml \
             --capabilities CAPABILITY_IAM \
             --region ${REGION} \
-            --s3-bucket ${ARTIFACTS_BUCKET} \
+            --resolve-s3 \
             --no-fail-on-empty-changeset \
             --parameter-overrides "S3Bucket=${ARTIFACTS_BUCKET} CognitoDomain=${COGNITO_DOMAIN}" \
             --role-arn ${CLOUDFORMATION_EXECUTION_ROLE}
-
+  
+  
       - name: Download NPM static resources
         uses: actions/download-artifact@v2
         with:
