@@ -1,9 +1,12 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: 'Hospital Management Service
+Description: 'Patient Record Management Service
 
   '
 Parameters:
+  CognitoUserPoolClientId:
+    Type: String
+    Description: The Cognito User Pool Client ID (COGNITO_USER_POOL_CLIENT_ID).
   CognitoDomain:
     Type: String
     Description: A name for the Cognito Domain
@@ -69,6 +72,7 @@ Resources:
     Properties:
       UserPoolId:
         Ref: UserPool
+      ClientName: PatientRecordAppClient
       AllowedOAuthFlowsUserPoolClient: true
       CallbackURLs:
       - http://localhost:8000

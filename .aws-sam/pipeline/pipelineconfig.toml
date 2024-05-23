@@ -1,11 +1,12 @@
 version = 0.1
+
 [default.pipeline_bootstrap.parameters]
-pipeline_user = "arn:aws:iam::751018890790:user/aws-sam-cli-managed-CapsStone-Remote-p-PipelineUser-lLCRrdnNv2Bh"
+pipeline_user = "arn:aws:iam::751018890790:user/aws-sam-cli-managed-Naifetene-pipeline-PipelineUser-Do2pRmqHrQ6f"
 permissions_provider = "AWS IAM"
 
-[CapsStone-Remote.pipeline_bootstrap.parameters]
-pipeline_execution_role = "arn:aws:iam::751018890790:role/aws-sam-cli-managed-CapsStone-PipelineExecutionRole-FfE4SpYdxSUf"
-cloudformation_execution_role = "arn:aws:iam::751018890790:role/aws-sam-cli-managed-CapsS-CloudFormationExecutionRo-VZtMOAuh3hzn"
-artifacts_bucket = "aws-sam-cli-managed-capsstone-remo-artifactsbucket-7ijcrikrmpxe"
+[Naifetene.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::751018890790:role/aws-sam-cli-managed-Naifetene-PipelineExecutionRole-Afwh8HTqSJ9s"
+cloudformation_execution_role = "arn:aws:iam::751018890790:role/aws-sam-cli-managed-Naife-CloudFormationExecutionRo-gqjVYBLhlvhr"
+artifacts_bucket = "aws-sam-cli-managed-naifetene-pipe-artifactsbucket-f6mpqcjn0pv9"
 image_repository = ""
 region = "us-east-2"
