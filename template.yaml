@@ -5,6 +5,11 @@ Description: >
 
 Parameters:
 
+  CognitoUserPoolClientId:
+    Type: String
+    Description: The Cognito User Pool Client ID (COGNITO_USER_POOL_CLIENT_ID).
+
+
   CognitoDomain:
     Type: String
     Description: A name for the Cognito Domain
@@ -76,6 +81,7 @@ Resources:
     Type: AWS::Cognito::UserPoolClient
     Properties:
       UserPoolId: !Ref UserPool
+      ClientName: !Ref CognitoUserPoolClientId
       AllowedOAuthFlowsUserPoolClient: true
       CallbackURLs:
         - http://localhost:8000
