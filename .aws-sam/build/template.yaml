@@ -72,8 +72,7 @@ Resources:
     Properties:
       UserPoolId:
         Ref: UserPool
-      ClientName:
-        Ref: CognitoUserPoolClientId
+      ClientName: PatientRecordAppClient
       AllowedOAuthFlowsUserPoolClient: true
       CallbackURLs:
       - http://localhost:8000
