@@ -9,10 +9,10 @@ on:
 env:
 
   # STUDENTS: Set these environment variables 
-  API_BASE_URL: https://gv410c7gcd.execute-api.us-east-2.amazonaws.com/Prod/   
-  COGNITO_DOMAIN: project-capstone-remote-cicd.auth.us-east-2.amazoncognito.com 
-  COGNITO_REDIRECT_SIGNIN:  https://d3m4tzskh33xok.cloudfront.net 
-  COGNITO_REDIRECT_SIGNOUT: https://d3m4tzskh33xok.cloudfront.net 
+  API_BASE_URL: https://gv410c7gcd.execute-api.us-east-2.amazonaws.com/Prod/
+  COGNITO_DOMAIN: project-capstone-remote-cicd
+  COGNITO_REDIRECT_SIGNIN: https://d3m4tzskh33xok.cloudfront.net
+  COGNITO_REDIRECT_SIGNOUT: https://d3m4tzskh33xok.cloudfront.net
 
   COGNITO_USER_POOL_ID: ${{ secrets.COGNITO_USER_POOL_ID }}
   COGNITO_USER_POOL_CLIENT_ID: ${{ secrets.COGNITO_USER_POOL_CLIENT_ID }}
@@ -25,9 +25,9 @@ env:
   SAM_TEMPLATE: template.yaml
 
   STACK_NAME: sam-app
-  PIPELINE_EXECUTION_ROLE: arn:aws:iam::751018890790:role/aws-sam-cli-managed-Naihiji-p-PipelineExecutionRole-DVzXhHBARrVw
-  CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::751018890790:role/aws-sam-cli-managed-Naihi-CloudFormationExecutionRo-2AxRN1fwrLmc
-  ARTIFACTS_BUCKET: aws-sam-cli-managed-naihiji-pipeli-artifactsbucket-7wvuepykya9f
+  PIPELINE_EXECUTION_ROLE: arn:aws:iam::751018890790:role/aws-sam-cli-managed-Naifetene-PipelineExecutionRole-Afwh8HTqSJ9s
+  CLOUDFORMATION_EXECUTION_ROLE: arn:aws:iam::751018890790:role/aws-sam-cli-managed-Naife-CloudFormationExecutionRo-gqjVYBLhlvhr
+  ARTIFACTS_BUCKET: aws-sam-cli-managed-naifetene-pipe-artifactsbucket-f6mpqcjn0pv9
   REGION: us-east-2
 
 jobs:
